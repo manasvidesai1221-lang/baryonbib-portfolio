@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Notices of the Royal Astronomical Society - Article</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --border-color: #e0e0e0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .journal-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .journal-title {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .paper-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--primary-color);
+        }
+
+        .authors {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .abstract {
+            margin: 20px 0;
+            text-align: justify;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .ad-container {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin: 20px 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .ad-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .top-ad {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #f3f4f6, #ffffff);
+            margin-bottom: 20px;
+        }
+
+        .side-ad {
+            width: 300px;
+            min-height: 250px;
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #f3f4f6, #ffffff);
+        }
+
+        .metrics-box {
+            background: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .metrics-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .metric {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .metric-value {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .download-button {
+            display: inline-block;
+            background: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .download-button:hover {
+            background: #27ae60;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f8f9fa;
+            color: var(--primary-color);
+        }
+
+        .figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .figure img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .figure-caption {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .related-articles {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .related-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .related-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        @media print {
+            .ad-container {
+                display: none;
+            }
+            body {
+                background: white;
+            }
+            .paper-container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="journal-header">
+        <h1 class="journal-title">Monthly Notices of the Royal Astronomical Society</h1>
+    </div>
+
+    <div class="ad-container top-ad">
+        <div class="ad-label">Advertisement</div>
+        <div style="color: #666;">
+            [Your research journey starts here - Visit ResearchGate Pro]
+        </div>
+    </div>
+
+    <div class="paper-container">
+        <div class="metrics-box">
+            <div class="metrics-title">Article Metrics</div>
+            <div class="metric">
+                <span class="metric-value">847</span> Views
+            </div>
+            <div class="metric">
+                <span class="metric-value">123</span> Downloads
+            </div>
+            <div class="metric">
+                <span class="metric-value">15</span> Citations
+            </div>
+            <div style="float: right;">
+                <a href="#" class="download-button">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="title">
+            Exploring the evolution of a dwarf spheroidal galaxy with SPH simulations: II. AGN feedback
+        </div>
+
+        <div class="authors">
+            Roberto Hazenfrats<sup>1</sup>, Paramita Barai<sup>2</sup>, Gustavo A. Lanfranchi<sup>1</sup>, and Anderson Caproni<sup>1</sup>
+            <div style="font-size: 14px; margin-top: 10px;">
+                <sup>1</sup>Department of Astronomy, University of São Paulo, São Paulo, SP, Brazil<br>
+                <sup>2</sup>Institute of Theoretical Physics, University of Warsaw, Warsaw, Poland
+            </div>
+        </div>
+
+        <div class="ad-container side-ad">
+            <div class="ad-label">Advertisement</div>
+            <div style="color: #666;">
+                [Discover the future of scientific publishing with ScienceDirect Premium]
+            </div>
+        </div>
+
+        <div class="abstract">
+            <strong>ABSTRACT</strong><br>
+            We investigate AGN feedback from an intermediate-mass black hole at the center of a dwarf spheroidal galaxy, by performing isolated galaxy simulations using a modified version of the GADGET-3 code. Our simulations incorporate both mechanical and radiative feedback modes, allowing us to study their relative importance in regulating star formation and affecting the galaxy's morphological evolution. We find that AGN feedback plays a crucial role in determining the final stellar mass and dark matter distribution of dwarf spheroidal galaxies, particularly in systems with initial masses above 10⁸ M⊙.
+        </div>
+
+        <table>
+            <tr>
+                <th>Parameter</th>
+                <th>Configuration/Value</th>
+            </tr>
+            <tr>
+                <td>v200</td>
+                <td>20.5 km s⁻¹</td>
+            </tr>
+            <tr>
+                <td>DM halo</td>
+                <td>Hernquist potential</td>
+            </tr>
+            <tr>
+                <td>DM mass</td>
+                <td>1.6 × 10⁹ M⊙</td>
+            </tr>
+            <tr>
+                <td>Gas fraction (mb)</td>
+                <td>0.16</td>
+            </tr>
+        </table>
+
+        <div class="figure">
+            <img src="/api/placeholder/800/600" alt="Black hole displacements over time">
+            <div class="figure-caption">
+                <strong>Figure 1.</strong> Black hole displacements over time in the resolution tests. The solid lines show the distance between the black hole and the galaxy's center of mass for different numerical resolutions: high (red), fiducial (blue), and low (green). The shaded regions represent the 1σ uncertainties derived from multiple simulation runs with varying initial conditions.
+            </div>
+        </div>
+
+        <div class="ad-container" style="clear: both;">
+            <div class="ad-label">Advertisement</div>
+            <div style="color: #666;">
+                [Advanced Research Tools - Try EndNote X9 Today]
+            </div>
+        </div>
+
+        <div class="related-articles">
+            <div class="related-title">Related Articles</div>
+            <div class="related-item">
+                Stellar feedback in dwarf galaxies: A comprehensive review
+            </div>
+            <div class="related-item">
+                New insights into the dark matter distribution in dSph galaxies
+            </div>
+            <div class="related-item">
+                GADGET-3 improvements for low-mass galaxy simulations
+            </div>
+        </div>
+    </div>
+</body>
+</html>

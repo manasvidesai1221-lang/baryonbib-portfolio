@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaryonBib</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #fff;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: #2196f3;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .search-bar {
+            flex-grow: 1;
+            max-width: 600px;
+            padding: 8px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
+        .nav-items {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-items a {
+            text-decoration: none;
+            color: #666;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .nav-items a.active {
+            color: #2196f3;
+        }
+        .nav-items a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -11px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #2196f3;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .category {
+            background: #f5f5f5;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+        }
+        .paper {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .authors {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .title {
+            color: #1a73e8;
+            font-size: 18px;
+            margin: 5px 0;
+            text-decoration: none;
+            display: block;
+        }
+        .title:hover {
+            text-decoration: underline;
+        }
+        .paper-info {
+            color: #666;
+            font-size: 14px;
+        }
+        .job-listing, .news-item {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .job-listing:hover, .news-item:hover {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"></div>
+        <input type="text" class="search-bar" placeholder="Search BaryonBib">
+        <div class="nav-items">
+            <a href="#" class="active" onclick="showSection('papers')">Home</a>
+            <a href="#" onclick="showSection('jobs')">Jobs</a>
+            <a href="#" onclick="showSection('news')">News/Events</a>
+            <a href="#">Library</a>
+            <a href="#">arXiv</a>
+            <a href="#">Account</a>
+        </div>
+    </div>
+
+    <div class="categories">
+        <span class="category">astro-ph</span>
+        <span class="category">Read Later</span>
+        <span class="category">hep-ph</span>
+        <span class="category">hep-th</span>
+        <span class="category">cs</span>
+        <span class="category">math</span>
+        <span class="category">physics</span>
+        <span class="category">Likes</span>
+        <span class="category">Read Again</span>
+    </div>
+
+    <div id="papers-section">
+        <div class="paper">
+            <div class="authors">Patrick McCreery, Leonardo A. Dos Santos, Néstor Espinoza, Romain Allart, James Kirk</div>
+            <a href="#" class="title">Tracing the Winds: A Uniform Interpretation of Helium Escape in Exoplanets from Archival Spectroscopic Observations</a>
+            <div class="paper-info">arXiv:2501.03998 (7 January 2025)</div>
+        </div>
+
+        <div class="paper">
+            <div class="authors">R. Hazenfrats, P. Barai, G. A. Lanfranchi, A. Caproni</div>
+            <a href="#" class="title">Exploring the evolution of a dwarf spheroidal galaxy with SPH simulations: II. AGN feedback</a>
+            <div class="paper-info">arXiv:2501.03985 (7 January 2025)</div>
+        </div>
+
+        <div class="paper">
+            <div class="authors">Francesco Dimiccoli, Francesco Maria Follega</div>
+            <a href="#" class="title">A novel experimental approach to uncover the nature of cosmic-ray Deuterium</a>
+            <div class="paper-info">arXiv:2501.03966 (7 January 2025)</div>
+        </div>
+
+        <div class="paper">
+            <div class="authors">C. Morris, Z. Guo, P. W. Lucas, N. Miller, C. Contreras Peña, M. A. Kuhn</div>
+            <a href="#" class="title">Eruptive YSOs in Cygnus-X: a mid-infrared variability study with NEOWISE and SPICY</a>
+            <div class="paper-info">arXiv:2501.03929 (7 January 2025)</div>
+        </div>
+
+        <div class="paper">
+            <div class="authors">Ariel Scolnic, Ealeal Bear, Noam Soker</div>
+            <a href="#" class="title">Enabling high mass accretion rates onto massive main sequence stars by outer envelope mass removal</a>
+            <div class="paper-info">arXiv:2501.03947 (7 January 2025)</div>
+        </div>
+
+        <div class="paper">
+            <div class="authors">Jaren N. Ashcraft, Ramya M. Anche, Sebastiaan Y. Haffert, Justin Hom, Maxwell A. Millar-Blanchaer, Ewan S. Douglas, Frans Snik, Rob G. Van Holstein, Kyle Van Gorkom, Warren Skidmore</div>
+            <a href="#" class="title">Polarization aberrations in next-generation Giant Segmented Mirror Telescopes (GSMTs). II. Influence of segment-to-segment coating variations on high-contrast imaging and polarimetry</a>
+            <div class="paper-info">arXiv:2501.03897 (7 January 2025)</div>
+        </div>
+    </div>
+
+    <div id="jobs-section" class="hidden">
+        <h2 class="section-title">Academic Positions</h2>
+        <div class="job-listing">
+            <h3 class="title">Postdoctoral Researcher - Astrophysics</h3>
+            <div class="authors">University of Cambridge</div>
+            <div class="paper-info">Posted: January 5, 2025</div>
+            <p>Research position focusing on exoplanet atmospheres and stellar physics.</p>
+        </div>
+        <div class="job-listing">
+            <h3 class="title">Faculty Position - Theoretical Physics</h3>
+            <div class="authors">MIT Physics Department</div>
+            <div class="paper-info">Posted: January 4, 2025</div>
+            <p>Tenure-track position in quantum field theory and string theory.</p>
+        </div>
+        <div class="job-listing">
+            <h3 class="title">PhD Position - Particle Physics</h3>
+            <div class="authors">CERN</div>
+            <div class="paper-info">Posted: January 3, 2025</div>
+            <p>Doctoral position working on the Large Hadron Collider experiments.</p>
+        </div>
+    </div>
+
+    <div id="news-section" class="hidden">
+        <h2 class="section-title">Latest News & Events</h2>
+        <div class="news-item">
+            <h3 class="title">International Conference on Quantum Computing 2025</h3>
+            <div class="authors">Virtual Event</div>
+            <div class="paper-info">February 15-18, 2025</div>
+            <p>Annual conference featuring leading researchers in quantum computing and information theory.</p>
+        </div>
+        <div class="news-item">
+            <h3 class="title">New Discovery in Dark Matter Research</h3>
+            <div class="authors">Nature Physics Publication</div>
+            <div class="paper-info">Published: January 7, 2025</div>
+            <p>Breakthrough findings from the Dark Matter Particle Explorer (DAMPE) satellite.</p>
+        </div>
+        <div class="news-item">
+            <h3 class="title">Physics Department Open House</h3>
+            <div class="authors">Stanford University</div>
+            <div class="paper-info">January 20, 2025</div>
+            <p>Annual event showcasing current research projects and facilities.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            document.getElementById('papers-section').classList.add('hidden');
+            document.getElementById('jobs-section').classList.add('hidden');
+            document.getElementById('news-section').classList.add('hidden');
+            
+            // Show selected section
+            document.getElementById(sectionName + '-section').classList.remove('hidden');
+            
+            // Update active nav item
+            document.querySelectorAll('.nav-items a').forEach(a => a.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
