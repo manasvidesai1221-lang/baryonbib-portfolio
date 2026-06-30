@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaryonBib Marketing Showcase — Manasvi Desai</title>
+    <style>
+        :root {
+            --bg: #070b12;
+            --card-bg: #0f1524;
+            --accent: #2196f3;
+            --accent-hover: #1976d2;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 3rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .meta {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 750px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent);
+            padding-left: 0.75rem;
+        }
+
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        @media (min-width: 680px) {
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .portfolio-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .portfolio-item:hover {
+            border-color: #334155;
+            transform: translateY(-4px);
+        }
+
+        .media-box {
+            width: 100%;
+            background: #0b111e;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img.asset-fluid {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            display: block;
+            background-color: #0b111e;
+        }
+
+        .link-placeholder-banner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #111827 0%, #080d1a 100%);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .platform-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: rgba(33, 150, 243, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+        }
+
+        .asset-icon-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .card-details {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-details h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-details p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .action-link-btn {
+            display: block;
+            text-align: center;
+            background: #2196f3;
+            color: #ffffff;
+            border: none;
+            padding: 0.7rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+            margin-top: auto;
+        }
+
+        .action-link-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .ratio-square { aspect-ratio: 1 / 1; }
+        .ratio-landscape { aspect-ratio: 5 / 4; }
+        .ratio-banner-link { aspect-ratio: 16 / 7; }
+
+        .editorial-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .editorial-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .blog-split {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .blog-split { grid-template-columns: 1.3fr 1fr; align-items: center; }
+        }
+
+        .editorial-body p {
+            margin-bottom: 1.25rem;
+            color: #cbd5e1;
+        }
+
+        .editorial-body ul {
+            margin-left: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        .editorial-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-img-box {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: #0b111e;
+        }
+
+        .blog-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <header>
+        <p class="tagline">Project Portfolio</p>
+        <h1>Market Asset Preparation</h1>
+        <p class="meta">Created independently by <strong>Manasvi Desai</strong> for BaryonBib. A responsive deployment dashboard containing cross-channel campaign artwork, video scripts, and product UX prototypes.</p>
+    </header>
+
+    <div class="filter-controls">
+        <button class="filter-btn active" onclick="filterMedia(event, 'all')">All Assets</button>
+        <button class="filter-btn" onclick="filterMedia(event, 'artwork')">Campaign Artwork</button>
+        <button class="filter-btn" onclick="filterMedia(event, 'prototype')">UX Prototypes</button>
+        <button class="filter-btn" onclick="filterMedia(event, 'video')">Video Showcases</button>
+    </div>
+
+    <div class="portfolio-grid" id="grid">
+        
+        <!-- ==================== SECTION A: CAMPAIGN ARTWORK ==================== -->
+
+        <!-- Artwork 1 -->
+        <div class="portfolio-item data-type-artwork">
+            <div class="media-box ratio-square">
+                <img src="assets/pics/Instagram Meme 3.jpg" class="asset-fluid" alt="Instagram Meme 3">
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>One-Stop Solution Concept</h3>
+                    <p>An impact graphic positioning BaryonBib as the ultimate all-in-one platform that handles every step of a researcher's workflow.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artwork 2 -->
+        <div class="portfolio-item data-type-artwork">
+            <div class="media-box ratio-landscape">
+                <img src="assets/pics/Picture 5.png" class="asset-fluid" alt="Picture 5">
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>Contextual Engagement Meme</h3>
+                    <p>A relatable campaign meme designed to drive audience engagement and likes by tapping into familiar student and researcher struggles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artwork 3 -->
+        <div class="portfolio-item data-type-artwork">
+            <div class="media-box ratio-landscape">
+                <img src="assets/pics/picture 6.png" class="asset-fluid" alt="picture 6">
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>"How Did You Not Know This?" Hook</h3>
+                    <p>A playful, thought-provoking graphic that questions the reader's current tool choices and highlights what they are missing out on.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artwork 4 -->
+        <div class="portfolio-item data-type-artwork">
+            <div class="media-box ratio-square">
+                <img src="assets/pics/Research Originals.jpg" class="asset-fluid" alt="Research Originals">
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>The "Netflix of Research" Ecosystem</h3>
+                    <p>A creative visual demonstrating how BaryonBib gathers everything a researcher needs into a single dashboard, just like how Netflix hosts all your favorite shows.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION B: PRODUCT & UX PROTOTYPES ==================== -->
+
+        <!-- Prototype 1 (Now pointing directly to local GitHub Pages live link) -->
+        <div class="portfolio-item data-type-prototype">
+            <div class="media-box ratio-banner-link">
+                <div class="link-placeholder-banner">
+                    <span class="platform-badge">UX Wireframe</span>
+                    <span class="asset-icon-label">&lt;/&gt; Interactive Live Web View</span>
+                </div>
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>Consumer Website Journey Framework</h3>
+                    <p>An interactive structural roadmap outlining the exact consumer conversion funnel and step-by-step navigation flow across the platform.</p>
+                </div>
+                <a href="consumer-journey.html" class="action-link-btn">Launch Live UX Prototype</a>
+            </div>
+        </div>
+
+        <!-- Prototype 2 (Now pointing directly to local GitHub Pages live link) -->
+        <div class="portfolio-item data-type-prototype">
+            <div class="media-box ratio-banner-link">
+                <div class="link-placeholder-banner">
+                    <span class="platform-badge">Monetization Architecture</span>
+                    <span class="asset-icon-label">&lt;/&gt; Interactive Live Web View</span>
+                </div>
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>Non-Intrusive PDF Advertising Layout</h3>
+                    <p>A working concept model showcasing how programmatic advertisements can be seamlessly positioned within research PDFs to generate revenue without disrupting reader focus.</p>
+                </div>
+                <a href="pdf-ad-layout.html" class="action-link-btn">Launch Live PDF Layout</a>
+            </div>
+        </div>
+
+        <!-- Prototype 3 (Now pointing directly to local GitHub Pages live link) -->
+        <div class="portfolio-item data-type-prototype">
+            <div class="media-box ratio-banner-link">
+                <div class="link-placeholder-banner">
+                    <span class="platform-badge">Early-Stage MVP Build</span>
+                    <span class="asset-icon-label">&lt;/&gt; Interactive Live Web View</span>
+                </div>
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>Initial Website Phase Model (Blogs & Events)</h3>
+                    <p>The original alpha build generated to map out core community pillars, showcasing real-time blog ingestion fields and collaborative event streams.</p>
+                </div>
+                <a href="website-alpha.html" class="action-link-btn">Launch Live Alpha Build</a>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION C: VIDEO SHOWCASES ==================== -->
+
+        <!-- Video 1 -->
+        <div class="portfolio-item data-type-video">
+            <div class="media-box ratio-banner-link">
+                <div class="link-placeholder-banner">
+                    <span class="platform-badge" style="background: rgba(76, 175, 80, 0.1); color: #4caf50;">LinkedIn & X (Twitter)</span>
+                    <span class="asset-icon-label">&#9654; Motion Campaign Link</span>
+                </div>
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>Beta Version Intro Sample</h3>
+                    <p>Initial motion framework walk-through outlining interface landing variables and application interface layouts designed to capture B2B interest.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1Ln0VBrU9abUW2agG8sIJzr0Cr_4co-lG/view?usp=sharing" target="_blank" class="action-link-btn" style="background-color: #4caf50;">Watch Beta Intro Video</a>
+            </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="portfolio-item data-type-video">
+            <div class="media-box ratio-banner-link">
+                <div class="link-placeholder-banner">
+                    <span class="platform-badge" style="background: rgba(76, 175, 80, 0.1); color: #4caf50;">TikTok & Instagram Reels</span>
+                    <span class="asset-icon-label">&#9654; Portrait Format Link</span>
+                </div>
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>Theme-Based Promotion — Harry Potter Draft</h3>
+                    <p>A fast-paced portrait format connecting high-friction reference hurdles to popular pop-culture themes to maximize audience retention.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1uADHp1QDVKZLhafbCOmv5cWXpezg2-u4/view?usp=drive_link" target="_blank" class="action-link-btn" style="background-color: #4caf50;">Watch Theme Promotion Reel</a>
+            </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="portfolio-item data-type-video">
+            <div class="media-box ratio-banner-link">
+                <div class="link-placeholder-banner">
+                    <span class="platform-badge" style="background: rgba(76, 175, 80, 0.1); color: #4caf50;">Multi-Channel Feed</span>
+                    <span class="asset-icon-label">&#9654; Educational Clip Link</span>
+                </div>
+            </div>
+            <div class="card-details">
+                <div>
+                    <h3>"Did You Know?" Educational Explainer</h3>
+                    <p>A value-first informational sequence breaking down speed variables, formatting automation, and key productivity tracking benchmarks.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1xu7DYQKbozTT4GLYkso_swjQ5aaCtJFQ/view?usp=drive_link" target="_blank" class="action-link-btn" style="background-color: #4caf50;">Watch Feature Explainer Video</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- STRATEGIC EDITORIAL ARTICLE SECTION -->
+    <section>
+        <div class="editorial-box">
+            <h3 class="editorial-title">From Research Chaos to Holiday Cheer: How BaryonBib Makes Your Christmas Stress-Free</h3>
+            
+            <div class="blog-split">
+                <div class="editorial-body">
+                    <p>The winter holidays bring cozy settings and festive decorations, but for researchers, they also bring major end-of-year deadlines. Instead of enjoying the break, many find themselves dealing with unorganized references, difficult style parameters, and fragmented files.</p>
+                    
+                    <p><strong>The Value Solution: 100% Stress Reduction</strong></p>
+                    <p>Navigating multiple research application steps manually takes significant focus away from deep work. This release introduces a single, unified workspace aimed at addressing that balance. It reduces the strain of formatting and finding citations by handling everything inside one organized hub.</p>
+                    
+                    <p style="margin-bottom: 1.5rem;"><strong>Key Campaign Objectives:</strong></p>
+                    <ul style="margin-bottom: 2.5rem;">
+                        <li>Consolidate structural discovery mechanisms into a unified dashboard framework.</li>
+                        <li>Reduce administrative time spent tracking down literature links by roughly 50%.</li>
+                        <li>Simplify coordination so researchers can successfully wrap up projects and enjoy the holidays guilt-free.</li>
+                    </ul>
+
+                    <a href="https://drive.google.com/file/d/1qNrPyB8ydxFvbfuUhnrfC6ldl08j9xXC/view?usp=drive_link" target="_blank" class="action-link-btn" style="background: #2196f3; padding: 0.85rem 2rem; display: inline-block; width: auto;">Watch Christmas Promotion Video</a>
+                </div>
+                
+                <div class="blog-img-box ratio-near-square-portrait">
+                    <img src="assets/pics/Untitled design (1).png" alt="BaryonBib Holiday Context Graphic">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>BaryonBib Portfolio Element &bull; Designed by Manasvi Desai</p>
+    </footer>
+
+</div>
+
+<script>
+    function filterMedia(evt, type) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        evt.currentTarget.classList.add('active');
+
+        const items = document.querySelectorAll('.portfolio-item');
+        items.forEach(item => {
+            if (type === 'all') {
+                item.style.display = 'flex';
+                setTimeout(() => item.style.opacity = '1', 10);
+            } else {
+                if (item.classList.contains('data-type-' + type)) {
+                    item.style.display = 'flex';
+                    setTimeout(() => item.style.opacity = '1', 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.display = 'none';
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
